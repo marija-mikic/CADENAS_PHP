@@ -1,0 +1,141 @@
+*{
+   margin: 0; 
+   padding: 0;
+   box-sizing: border-box;
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  outline: none;border: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: .2s linear;
+}
+:root{
+  --pink:#e84393; 
+}
+
+html{
+  font-size: 62,5%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+  overflow-x: hidden;
+}
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    padding: 2rem 9%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+}
+
+section{
+    padding: 2rem 9%;
+}
+
+.home{
+    display: flex;
+    align-items: center;
+    min-height: 50vh;
+    background-size: cover;
+    background-position: center;
+}
+
+.home .content{
+max-width: 90rem;
+
+}
+
+.home .content h3{
+    font-size: 4rem;
+    color: chocolate;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.home .content span{
+    font-size: 3rem;
+    color: chocolate;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+header .logo{
+    font-size: 2rem;
+    color: brown;
+    font-weight: bolder;
+}
+
+header .navbar a{
+    font-size: 1rem;
+    padding: 0 1.5rem;
+    color: chocolate;
+}
+
+header .navbar a:hover{
+    color:var(--pink);
+}
+
+@media(max-width: 991px){
+    html{
+    font-size: 55%;
+    }
+
+    header{
+        padding: 2rem;
+    }
+}
+
+.products .box-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1,5rem;
+}
+.products .box-container .box{
+    flex: 1 1 30rem;
+    box-shadow: 0,5rem 1,5rem rgba(0, 0, 0, .1);
+    position: relative;
+
+}
+
+.products .box-container.box .image{
+    position: relative;
+    text-align: center;
+    padding-top: 2rem;
+    overflow: hidden;
+
+}
+.products .box-container .box .image img{
+    height: 25rem;     
+
+}
+
+.products .box-container p3{
+    text-align: center;
+    font-size: 1rem;
+    font-style: italic;
+    color: crimson;
+}
+.products .box-container .box:hover .image img{
+    transform: scale(1.1);
+}
+
+@media (max-widht:768px){
+    header .navbar{
+        position: absolute;
+        top: 0; left: 0; right: 0;
+        background: burlywood;
+        border-top: .1rem solid rgba(0, 0, 0, .1);
+    }
+
+    header .navbar a{
+        margin: 1,5rem;
+        padding: 1,5rem;
+        background: #fff;
+        border: 1rem solid rgba(0, 0, 0, .1);
+        display: block;
+    }
+}
+ 
