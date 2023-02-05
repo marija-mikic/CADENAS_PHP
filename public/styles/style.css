@@ -50,8 +50,34 @@ max-width: 90rem;
 
 }
 
+.home .container{
+max-width: 50rem;
+padding-top: 5rem;
+
+}
 .home .content h3{
-    font-size: 4rem;
+    font-size: 3rem;
+    color: chocolate;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.btn{
+margin-top: 0,5rem;
+display: inline-block;
+font-size: 1,7rem;
+color: black;
+background: var(--green);
+border-radius: .5rem;
+padding: 5rem 6rem;
+}
+
+.btn:hover{
+    background: var(--green);
+    letter-spacing: .1rem;
+}
+
+.home .content p{
+    font-size: 1rem;
     color: chocolate;
     font-family: 'Times New Roman', Times, serif;
 }
@@ -61,7 +87,11 @@ max-width: 90rem;
     color: chocolate;
     font-family: 'Courier New', Courier, monospace;
 }
-
+.home .content spana{
+    font-size: 2rem;
+    color: chocolate;
+    font-family: 'Courier New', Courier, monospace;
+}
 header .logo{
     font-size: 2rem;
     color: brown;
@@ -105,6 +135,15 @@ header .navbar a:hover{
     text-align: center;
     padding-top: 2rem;
     overflow: hidden;
+
+}
+
+.home .image{
+    position:relative;
+    text-align: center;
+    padding-left: 20rem;
+    overflow: hidden;
+    padding-top: 0rem;
 
 }
 .products .box-container .box .image img{

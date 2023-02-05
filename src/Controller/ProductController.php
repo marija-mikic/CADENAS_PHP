@@ -3,7 +3,7 @@
 namespace App\Controller;
 
 
-
+use App\Service\ApiClient;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -16,31 +16,30 @@ use Symfony\Contracts\HttpClient\HttpClientInterface;
 
 class ProductController extends AbstractController
 {
+
+
     #[Route('/', name: 'app_product')]
-    public function index(HttpClientInterface $client, PaginatorInterface $paginator, Request $request): Response
+    public function index(ApiClient $client, PaginatorInterface $paginator, Request $request): Response
     {
-
-        $response = $client->request('GET', 'https://dummyjson.com/products');
-
-        $contents = $response->toArray();
-        $paginat = $paginator->paginate($contents, $page = 1, $limit = 6);
-        // dd($paginat);
+        $products = $client->getProduct();
+        $productsEncode = json_encode($products);
+        //$data = $paginator->paginate($productsEncode, $request->query->getInt('page', 1), 10);
+        // dd($productsEncode);
         return $this->render('base.html.twig', [
-            'contents' => $contents,
-            'paginate' => $paginat,
-            'page' => $page,
-            'limit' => $limit
+            'productsEncode' => $productsEncode,
+
         ]);
     }
 
     #[Route('products/{id}', name: 'app_show/product')]
-    public function show(HttpClientInterface $client): Response
+    public function show(ApiClient $client): Response
     {
-        $response = $client->request('GET', 'https://dummyjson.com/products');
-        $content = $response->toArray();
-        // dd($content);
-        return $this->render('product/show.html.twig', [
-            'content' => $content
+        $products = $client->getProduct();
+        $productsEncode = json_encode($products);
+        //$data = $paginator->paginate($productsEncode, $request->query->getInt('page', 1), 10);
+        // dd($productsEncode);
+        return $this->render('/product/index.html.twig', [
+            'productsEncode' => $productsEncode,
         ]);
     }
 }
