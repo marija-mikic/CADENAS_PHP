@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -27,23 +28,23 @@
 <span> Choose one</span>
 </div>
 </section>
-{% for content in productsEncode %}
+{% for product in products %}       
     
-
 <section class="products" id="products">
 
-    <div class="box-container">
-       
+    <div class="box-container">       
              <div class="box">
-                     <div class="image">
-                         <img {{content.images}} alt="">
-                            <p3> {{content.title}}</p3>
-                            <p3> {{content.description}}</p3>
+                        <div class>{{product.title }}</div>
+                        <div class>{{product.description }}</div>
+                     {% for picture in product.images %}  
+                      <a href ="{{ path('app_show/product', {'id': product.id}) }}"><img src="{{ picture }}"></a>
+                      {% endfor %}                      
+                          
                      </div>
              </div>
      </div>
      </div>
 </section>
-{% endfor %}
+ {% endfor %}
   {% endblock %}
 </html>
