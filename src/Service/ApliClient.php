@@ -21,7 +21,6 @@ class ApiClient
             'GET',
             "https://dummyjson.com/products"
         );
-
         $result = $response->toArray();
 
         return $result;
