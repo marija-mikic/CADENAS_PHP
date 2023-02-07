@@ -34,11 +34,12 @@ class ProductController extends AbstractController
     public function show(ApiClient $client, $id): Response
     {
 
-        $productId = $client->getId($id);
-        var_dump($productId);
+        $response = $client->getId($id);
 
+        $product = json_decode($response->getContent(), true);
+        //var_dump($product);
         return $this->render('product/index.html.twig', [
-            'productId' => $productId
+            'product' => $product
         ]);
     }
 }
